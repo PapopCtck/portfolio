@@ -1,4 +1,5 @@
-import { Contact, Footer } from "@ppaop/features";
+import { Contact } from "@ppaop/features/Contact";
+import { Footer } from "@ppaop/features/Footer";
 
 export default function Page() {
   return (
