@@ -1,4 +1,4 @@
-import { About, Contact, Footer, GetInTouch, Hero, PreviousWork } from "@ppaop/features";
+import { About, Footer, GetInTouch, Hero, PreviousWork } from "@ppaop/features";
 
 export default function Home() {
   return (
