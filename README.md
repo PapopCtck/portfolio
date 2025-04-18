@@ -55,10 +55,11 @@ portfolio/
 │   ├── (routes)/        # Route groups
 │   ├── api/             # API routes
 │   └── layout.tsx       # Root layout
-├── components/          # Reusable components
-├── public/             # Static assets
-├── styles/             # Global styles
-└── types/              # TypeScript types
+├── ui/                   # UI components
+├── features/             # Features components
+├── public/               # Static assets
+├── styles/               # Global styles
+└── types/                # TypeScript types
 ```
 
 ## 🔧 Configuration
