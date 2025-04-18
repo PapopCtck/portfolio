@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PPAOP
 
-## Getting Started
+## 🚀 Features
 
-First, run the development server:
+- ⚡️ Built with Next.js 15 and React
+- 📱 Fully responsive design
+- 🎨 Modern and clean UI
+- ⚙️ Optimized performance
+- 🔍 SEO-friendly
+-  Contact form
 
+## 🛠️ Tech Stack
+
+- [Next.js 15](https://nextjs.org/) - React framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [Motion](https://www.motion.dev/) - Animations
+- [Cloudflare](https://www.cloudflare.com/) - Deployment
+- [Biome](https://biome.sh/) - Linter
+- [Posthog](https://posthog.com/) - Analytics
+- [React Hook Form](https://react-hook-form.com/) - Form handling
+- [Valibot](https://valibot.dev/) - Validation
+- [Bun](https://bun.sh/) - Package manager
+- [Shadcn](https://ui.shadcn.com/) - UI components
+
+## 📦 Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+git clone git@github.com:PapopCtck/portfolio.git
+```
+
+2. Navigate to the project directory:
+```bash
+cd portfolio
+```
+
+3. Install dependencies:
+```bash
+bun install
+```
+
+4. Start the development server:
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio/
+├── app/                  # App router directory
+│   ├── (routes)/        # Route groups
+│   ├── api/             # API routes
+│   └── layout.tsx       # Root layout
+├── components/          # Reusable components
+├── public/             # Static assets
+├── styles/             # Global styles
+└── types/              # TypeScript types
+```
 
-## Learn More
+## 🔧 Configuration
 
-To learn more about Next.js, take a look at the following resources:
+1. Create a `.env.local` file in the root directory
+2. Add your environment variables:
+```env
+NEXT_PUBLIC_EMAIL_SERVICE=your_email_service
+NEXT_PUBLIC_EMAIL_TEMPLATE=your_template_id
+NEXT_PUBLIC_EMAIL_PUBLIC_KEY=your_public_key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Deploy on Vercel
+## 👨‍💻 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+PapopCtck - [@PapopCtck](https://github.com/PapopCtck)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🙏 Acknowledgments
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Motion Documentation](https://www.motion.dev/docs)
+- [Cloudflare Documentation](https://developers.cloudflare.com/docs)
+- [Biome Documentation](https://biome.sh/docs)
+- [Posthog Documentation](https://posthog.com/docs)
+- [React Hook Form Documentation](https://react-hook-form.com/docs)
+- [Valibot Documentation](https://valibot.dev/docs)
+- [Shadcn Documentation](https://ui.shadcn.com/docs)
