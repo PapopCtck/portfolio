@@ -40,6 +40,9 @@
       "style": {
         "noShoutyConstants": "warn",
         "useNamingConvention": "error"
+      },
+      "complexity": {
+        "noUselessSwitchCase": "info"
       }
     }
   },
