@@ -60,7 +60,7 @@ export function SpinningText({
   const finalTransition = {
     ...BASE_TRANSITION,
     ...transition,
-    duration: (transition as { duration?: number })?.duration ?? duration,
+    duration: (transition as { duration?: number } | undefined)?.duration ?? duration,
   };
 
   const containerVariants = {
