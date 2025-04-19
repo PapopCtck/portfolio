@@ -115,6 +115,8 @@ export function DotPattern({
         "pointer-events-none absolute inset-0 h-full w-full",
         className,
       )}
+      x={x}
+      y={y}
       {...props}
     >
       <defs>
@@ -123,7 +125,7 @@ export function DotPattern({
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
       </defs>
-      {dots.map((dot, index) => (
+      {dots.map((dot) => (
         <motion.circle
           key={`${dot.x}-${dot.y}`}
           cx={dot.x}

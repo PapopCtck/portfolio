@@ -64,13 +64,15 @@ function ParallaxText({
     calculateRepetitions();
 
     window.addEventListener("resize", calculateRepetitions);
-    return () => window.removeEventListener("resize", calculateRepetitions);
+    return () => {
+      window.removeEventListener("resize", calculateRepetitions);
+    };
   }, [children]);
 
   const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
 
   const directionFactor = React.useRef<number>(1);
-  useAnimationFrame((t, delta) => {
+  useAnimationFrame((_, delta) => {
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
     if (velocityFactor.get() < 0) {
