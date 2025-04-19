@@ -1,7 +1,12 @@
 "use client";
 
 import { cn } from "@ppaop/lib/utils";
-import { AnimatePresence, motion, type MotionProps, type Variants } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  type MotionProps,
+  type Variants,
+} from "motion/react";
 import type { ElementType } from "react";
 
 type AnimationType = "text" | "word" | "character" | "line";
@@ -56,7 +61,9 @@ interface AnimationVariantConfig {
 }
 
 // Animation variant factory
-const createAnimationVariant = (type: AnimationVariant): AnimationVariantConfig => {
+const createAnimationVariant = (
+  type: AnimationVariant
+): AnimationVariantConfig => {
   const baseConfig = {
     container: animationConfig.containerVariants,
     item: animationConfig.itemVariants,
@@ -77,8 +84,16 @@ const createAnimationVariant = (type: AnimationVariant): AnimationVariantConfig 
         container: baseConfig.container,
         item: {
           hidden: { opacity: 0, filter: "blur(10px)" },
-          show: { opacity: 1, filter: "blur(0px)", transition: { duration: 0.3 } },
-          exit: { opacity: 0, filter: "blur(10px)", transition: { duration: 0.3 } },
+          show: {
+            opacity: 1,
+            filter: "blur(0px)",
+            transition: { duration: 0.3 },
+          },
+          exit: {
+            opacity: 0,
+            filter: "blur(10px)",
+            transition: { duration: 0.3 },
+          },
         },
       };
     case "blurInUp":
@@ -336,6 +351,20 @@ const getFinalVariants = (
   };
 };
 
+const getStaggerTimings = (by: AnimationType) => {
+  switch (by) {
+    case "character":
+      return animationConfig.staggerTimings.character;
+    case "line":
+      return animationConfig.staggerTimings.line;
+    case "text":
+      return animationConfig.staggerTimings.text;
+    case "word":
+    default:
+      return animationConfig.staggerTimings.word;
+  }
+};
+
 export function TextAnimate({
   children,
   delay = 0,
@@ -353,7 +382,14 @@ export function TextAnimate({
   const MotionComponent = motion.create(Component);
   const segments = TextSegmenter.segment(children, by);
   const animationVariant = createAnimationVariant(animation);
-  const finalVariants = getFinalVariants(variants, animationVariant, delay, duration, segments);
+  const finalVariants = getFinalVariants(
+    variants,
+    animationVariant,
+    delay,
+    duration,
+    segments
+  );
+  const staggerTimings = getStaggerTimings(by);
 
   return (
     <AnimatePresence mode="popLayout">
@@ -372,11 +408,11 @@ export function TextAnimate({
             // biome-ignore lint/suspicious/noArrayIndexKey: we don't have a better key
             key={`${by}-${segment}-${i}`}
             variants={finalVariants.item}
-            custom={i * animationConfig.staggerTimings[by]}
+            custom={i * staggerTimings}
             className={cn(
               by === "line" ? "block" : "inline-block whitespace-pre",
               by === "character" && "",
-              segmentClassName,
+              segmentClassName
             )}
           >
             {segment}
