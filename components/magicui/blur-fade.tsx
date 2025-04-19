@@ -12,6 +12,14 @@ import { useRef } from "react";
 
 type MarginType = UseInViewOptions["margin"];
 
+interface AnimationConfig {
+  duration: number;
+  delay: number;
+  offset: number;
+  direction: "up" | "down" | "left" | "right";
+  blur: string;
+}
+
 interface BlurFadeProps extends MotionProps {
   children: React.ReactNode;
   className?: string;
@@ -19,45 +27,64 @@ interface BlurFadeProps extends MotionProps {
     hidden: { y: number };
     visible: { y: number };
   };
-  duration?: number;
-  delay?: number;
-  offset?: number;
-  direction?: "up" | "down" | "left" | "right";
+  animationConfig?: Partial<AnimationConfig>;
   inView?: boolean;
   inViewMargin?: MarginType;
-  blur?: string;
 }
+
+const defaultAnimationConfig: AnimationConfig = {
+  duration: 0.4,
+  delay: 0,
+  offset: 6,
+  direction: "down",
+  blur: "6px",
+};
+
+const getDirectionProperty = (direction: string) => {
+  return direction === "left" || direction === "right" ? "x" : "y";
+};
+
+const getDirectionValue = (direction: string, offset: number, isHidden: boolean) => {
+  if (isHidden) {
+    return direction === "right" || direction === "down" ? -offset : offset;
+  }
+  return 0;
+};
+
+const createDefaultVariants = (config: AnimationConfig): Variants => {
+  const { direction, offset, blur } = config;
+  const property = getDirectionProperty(direction);
+
+  return {
+    hidden: {
+      [property]: getDirectionValue(direction, offset, true),
+      opacity: 0,
+      filter: `blur(${blur})`,
+    },
+    visible: {
+      [property]: getDirectionValue(direction, offset, false),
+      opacity: 1,
+      filter: 'blur(0px)',
+    },
+  };
+};
 
 export function BlurFade({
   children,
   className,
   variant,
-  duration = 0.4,
-  delay = 0,
-  offset = 6,
-  direction = "down",
+  animationConfig = {},
   inView = false,
   inViewMargin = "-50px",
-  blur = "6px",
   ...props
 }: BlurFadeProps) {
   const ref = useRef(null);
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
   const isInView = !inView || inViewResult;
-  const defaultVariants: Variants = {
-    hidden: {
-      [direction === "left" || direction === "right" ? "x" : "y"]:
-        direction === "right" || direction === "down" ? -offset : offset,
-      opacity: 0,
-      filter: `blur(${blur})`,
-    },
-    visible: {
-      [direction === "left" || direction === "right" ? "x" : "y"]: 0,
-      opacity: 1,
-      filter: 'blur(0px)',
-    },
-  };
-  const combinedVariants = variant || defaultVariants;
+
+  const config = { ...defaultAnimationConfig, ...animationConfig };
+  const combinedVariants = variant || createDefaultVariants(config);
+
   return (
     <AnimatePresence>
       <motion.div
@@ -67,8 +94,8 @@ export function BlurFade({
         exit="hidden"
         variants={combinedVariants}
         transition={{
-          delay: 0.04 + delay,
-          duration,
+          delay: 0.04 + config.delay,
+          duration: config.duration,
           ease: "easeOut",
         }}
         className={className}
