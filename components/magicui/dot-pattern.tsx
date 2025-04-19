@@ -16,6 +16,7 @@ import { useEffect, useId, useRef, useState } from "react";
  * @param {number} [cr=1] - The radius of each dot
  * @param {string} [className] - Additional CSS classes to apply to the SVG container
  * @param {boolean} [glow=false] - Whether dots should have a glowing animation effect
+ * @param {number} [renderDistance=0.4] - The distance at which dots are rendered from the center of the container (0-1) 1 is the entire container
  */
 interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
   width?: number;
@@ -27,6 +28,7 @@ interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
   cr?: number;
   className?: string;
   glow?: boolean;
+  renderDistance?: number;
   [key: string]: unknown;
 }
 
@@ -70,6 +72,7 @@ export function DotPattern({
   cr = 1,
   className,
   glow = false,
+  renderDistance = 0.4,
   ...props
 }: DotPatternProps) {
   const id = useId();
@@ -100,14 +103,30 @@ export function DotPattern({
     (_, i) => {
       const col = i % Math.ceil(dimensions.width / width);
       const row = Math.floor(i / Math.ceil(dimensions.width / width));
-      return {
-        x: col * width + cx,
-        y: row * height + cy,
-        delay: Math.random() * 5,
-        duration: Math.random() * 3 + 2,
-      };
+      const x = col * width + cx;
+      const y = row * height + cy;
+
+      // Calculate distance from center
+      const centerX = dimensions.width / 2;
+      const centerY = dimensions.height / 2;
+      const distance = Math.sqrt(
+        (x - centerX) ** 2 + (y - centerY) ** 2
+      );
+
+      // Calculate the maximum visible distance based on the container size
+      const maxVisibleRadius = Math.min(dimensions.width, dimensions.height) * renderDistance;
+
+      if (distance <= maxVisibleRadius) {
+        return {
+          x,
+          y,
+          delay: Math.random() * 5,
+          duration: Math.random() * 3 + 2,
+        };
+      }
+      return null;
     }
-  );
+  ).filter((dot): dot is NonNullable<typeof dot> => dot !== null);
 
   return (
     <svg
