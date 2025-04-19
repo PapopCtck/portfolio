@@ -83,7 +83,7 @@ export function BlurFade({
   const isInView = !inView || inViewResult;
 
   const config = { ...defaultAnimationConfig, ...animationConfig };
-  const combinedVariants = variant || createDefaultVariants(config);
+  const combinedVariants = variant ?? createDefaultVariants(config);
 
   return (
     <AnimatePresence>
