@@ -62,7 +62,7 @@ interface AnimationVariantConfig {
 
 // Animation variant factory
 const createAnimationVariant = (
-  type: AnimationVariant
+  type: AnimationVariant,
 ): AnimationVariantConfig => {
   const baseConfig = {
     container: animationConfig.containerVariants,
@@ -303,7 +303,7 @@ const getFinalVariants = (
   animationVariant: AnimationVariantConfig,
   delay: number,
   duration: number,
-  segments: string[]
+  segments: string[],
 ): { container: Variants; item: Variants } => {
   if (variants) {
     return {
@@ -387,7 +387,7 @@ export function TextAnimate({
     animationVariant,
     delay,
     duration,
-    segments
+    segments,
   );
   const staggerTimings = getStaggerTimings(by);
 
@@ -412,7 +412,7 @@ export function TextAnimate({
             className={cn(
               by === "line" ? "block" : "inline-block whitespace-pre",
               by === "character" && "",
-              segmentClassName
+              segmentClassName,
             )}
           >
             {segment}
