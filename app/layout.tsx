@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Roboto_Mono } from "next/font/google";
+import { DM_Sans, Roboto_Mono, Zeyada } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -12,9 +12,16 @@ const robotoMono = Roboto_Mono({
   subsets: ["latin"],
 });
 
+const zeyada = Zeyada({
+  variable: "--font-zeyada",
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "PPAOP | Portfolio",
-  description: "Personal Portfolio of Papop Chattongchaikul. Software Engineer based in Bangkok, Thailand.",
+  description:
+    "Personal Portfolio of Papop Chattongchaikul. Software Engineer based in Bangkok, Thailand.",
 };
 
 export default function RootLayout({
@@ -25,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${dmSans.variable} ${robotoMono.variable} bg-background text-foreground antialiased`}
+        className={`${dmSans.variable} ${robotoMono.variable} ${zeyada.variable} ${dmSans.className} bg-background text-foreground antialiased`}
       >
         {children}
       </body>

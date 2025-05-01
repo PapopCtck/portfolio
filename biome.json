@@ -11,8 +11,9 @@
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "tab",
-    "lineWidth": 80
+    "indentStyle": "space",
+    "lineWidth": 80,
+    "attributePosition": "auto"
   },
   "organizeImports": {
     "enabled": true
@@ -30,7 +31,8 @@
         "noDocumentImportInPage": "error",
         "noHeadElement": "error",
         "noHeadImportInDocument": "error",
-        "noImgElement": "error"
+        "noImgElement": "error",
+        "useSortedClasses": "info"
       },
       "performance": {
         "noBarrelFile": "error"
@@ -52,11 +54,11 @@
       "jsxQuoteStyle": "double",
       "quoteProperties": "asNeeded",
       "trailingCommas": "all",
-      "semicolons": "asNeeded",
+      "semicolons": "always",
       "arrowParentheses": "always",
       "bracketSpacing": true,
       "bracketSameLine": false,
-      "quoteStyle": "single",
+      "quoteStyle": "double",
       "attributePosition": "auto"
     }
   }
