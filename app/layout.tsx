@@ -5,15 +5,18 @@ import { Dock } from "@ppaop/features/Dock";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
+  subsets: ["latin"],
 });
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
+  subsets: ["latin"],
 });
 
 const zeyada = Zeyada({
   variable: "--font-zeyada",
   weight: "400",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
