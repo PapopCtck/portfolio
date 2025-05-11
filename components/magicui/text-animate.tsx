@@ -275,7 +275,6 @@ const TextSegmenter = {
         return text.split("");
       case "line":
         return text.split("\n");
-      case "text":
       default:
         return [text];
     }
@@ -359,7 +358,6 @@ const getStaggerTimings = (by: AnimationType) => {
       return animationConfig.staggerTimings.line;
     case "text":
       return animationConfig.staggerTimings.text;
-    case "word":
     default:
       return animationConfig.staggerTimings.word;
   }

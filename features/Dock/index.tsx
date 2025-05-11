@@ -67,7 +67,7 @@ const DATA = {
 export const Dock = () => {
   return (
     <TooltipProvider>
-      <MagicDock direction="middle" className="fixed bottom-5 left-0 right-0" iconMagnification={45}>
+      <MagicDock direction="middle" className="fixed right-0 bottom-5 left-0 z-50" iconMagnification={45}>
         {DATA.navbar.map((item) => (
           <DockIcon key={item.label}>
             <Tooltip>
@@ -102,6 +102,7 @@ export const Dock = () => {
                     buttonVariants({ variant: "ghost", size: "icon" }),
                     "size-12 rounded-full"
                   )}
+                  target="_blank"
                 >
                   <social.icon className="size-4" />
                 </Link>
