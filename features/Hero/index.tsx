@@ -1,4 +1,5 @@
 import { SpinningText } from "@ppaop/components/magicui/spinning-text";
+import { HorizonGuideLine } from "@ppaop/components/ui/horizonGuideLine";
 import { useMemo } from "react";
 
 const HeroText = () => {
@@ -81,7 +82,7 @@ const RightText = () => {
 const Spinner = () => {
   return (
     <div className="absolute bottom-[250px] left-[50%] translate-x-[-50%]">
-      <div className="absolute top-[-250px] h-[80px] w-[1px] bg-white lg:h-[80px]" />
+      <HorizonGuideLine className="absolute top-[-250px]" />
       <span className="font-(family-name:--font-zeyada) absolute top-[-225px] right-[-40vw] hidden whitespace-nowrap text-2xl xl:block">
         Scroll down to know more!
       </span>
@@ -89,9 +90,10 @@ const Spinner = () => {
     </div>
   );
 };
+
 export const Hero = () => {
   return (
-    <div className="relative min-h-[1200px] max-w-svw overflow-hidden">
+    <section className="relative min-h-[1200px] max-w-svw select-none overflow-hidden">
       <HeroText />
       <Location />
       <div className="absolute top-[250px] w-full max-w-svw md:top-[200px]">
@@ -99,6 +101,6 @@ export const Hero = () => {
         <RightText />
       </div>
       <Spinner />
-    </div>
+    </section>
   );
 };
