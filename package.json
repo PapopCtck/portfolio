@@ -16,12 +16,14 @@
     "@arcjet/next": "^1.0.0-beta.5",
     "@hookform/resolvers": "^5.0.1",
     "@opennextjs/cloudflare": "^1.0.0-beta.3",
+    "@radix-ui/react-separator": "^1.1.6",
     "@radix-ui/react-slot": "^1.2.0",
+    "@radix-ui/react-tooltip": "^1.2.6",
     "@t3-oss/env-nextjs": "^0.12.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.488.0",
-    "motion": "^12.7.4",
+    "motion": "^12.10.5",
     "next": "15.3.0",
     "posthog-js": "^1.236.1",
     "react": "^19.0.0",
@@ -43,5 +45,6 @@
   },
   "trustedDependencies": [
     "@biomejs/biome"
-  ]
+  ],
+  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
 }
