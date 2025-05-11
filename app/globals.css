@@ -166,6 +166,12 @@
   -webkit-text-stroke-color: var(--foreground);
 }
 
+@utility text-outline-secondary {
+  color: var(--background);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--secondary);
+}
+
 @utility writing-mode-sideways {
   writing-mode: sideways-lr;
 }
