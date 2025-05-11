@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { Dock } from "@ppaop/features/Dock";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -14,7 +15,8 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "PPAOP | Portfolio",
-  description: "Personal Portfolio of Papop Chattongchaikul. Software Engineer based in Bangkok, Thailand.",
+  description:
+    "Personal Portfolio of Papop Chattongchaikul. Software Engineer based in Bangkok, Thailand.",
 };
 
 export default function RootLayout({
@@ -28,6 +30,7 @@ export default function RootLayout({
         className={`${dmSans.variable} ${robotoMono.variable} bg-background text-foreground antialiased`}
       >
         {children}
+        <Dock />
       </body>
     </html>
   );
