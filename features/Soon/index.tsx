@@ -18,7 +18,7 @@ export const Soon = () => {
           className="font-(family-name:--font-dm-sans) font-extrabold text-8xl text-black text-outline text-shadow-"
           segmentClassName="segment"
         >
-          SOON
+          MORE TO COME
         </TextAnimate>
       </div>
     </div>
