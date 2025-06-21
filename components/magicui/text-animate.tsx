@@ -294,6 +294,7 @@ interface TextAnimateParams {
   once?: boolean;
   by?: AnimationType;
   animation?: AnimationVariant;
+  textClassByIndex?: string[];
 }
 
 // Helper function to get final variants
@@ -375,6 +376,7 @@ export function TextAnimate({
   once = false,
   by = "word",
   animation = "fadeIn",
+  textClassByIndex = [],
   ...props
 }: TextAnimateParams & MotionProps) {
   const MotionComponent = motion.create(Component);
@@ -410,6 +412,7 @@ export function TextAnimate({
             className={cn(
               by === "line" ? "block" : "inline-block whitespace-pre",
               by === "character" && "",
+              textClassByIndex[i] ?? "",
               segmentClassName,
             )}
           >
