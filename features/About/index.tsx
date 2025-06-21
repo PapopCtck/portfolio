@@ -1,4 +1,4 @@
-import { HorizonGuideLine } from "@ppaop/components/ui/horizonGuideLine";
+import { HorizonGuideLine } from "@ppaop/components/shadcn-ui/horizonGuideLine";
 
 export const About = () => {
   return (
@@ -15,7 +15,7 @@ export const About = () => {
         <div className="absolute right-[-35vw] bottom-[15%] whitespace-nowrap font-black text-9xl text-outline-secondary md:right-[-1200px] md:text-[300px] lg:bottom-[10%] lg:text-[400px] xl:right-[-800px]">
           ABOUT ME
         </div>
-        <p className="-translate-x-1/2 md:-translate-x-0 absolute top-60 left-[50%] z-20 max-w-[425px] text-justify font-semibold md:right-[15%] md:left-auto lg:max-w-[560px]">
+        <p className="-translate-x-1/2 md:-translate-x-0 absolute top-60 left-[50%] z-20 max-w-[425px] text-justify font-semibold md:right-[15%] md:left-auto md:text-2xl lg:max-w-[560px]">
           I'm a full-stack developer with a strong focus on frontend
           architecture and user experience. I've led small teams in building
           scalable web applications for clients like BigC, Amway, Shell, and
@@ -24,11 +24,11 @@ export const About = () => {
           delivery—often under tight timelines.
         </p>
       </section>
-      <section className="relative min-h-[800px]">
+      <section className="relative min-h-[850px]">
         <div className="absolute top-[35%] left-[-35vw] whitespace-nowrap font-black text-9xl text-outline-secondary md:left-[-1200px] md:text-[300px] lg:bottom-[10%] lg:text-[400px] xl:left-[-800px]">
           ABOUT ME
         </div>
-        <p className="-translate-x-1/2 md:-translate-x-0 absolute top-40 left-[50%] z-20 max-w-[425px] text-justify font-semibold md:top-60 md:right-auto md:left-[15%] lg:max-w-[560px]">
+        <p className="-translate-x-1/2 md:-translate-x-0 absolute top-40 left-[50%] z-20 max-w-[425px] text-justify font-semibold md:top-60 md:right-auto md:left-[15%] md:text-2xl lg:max-w-[560px]">
           My strengths lie in developing clean, maintainable frontend code,
           creating design systems, and optimizing performance. I’ve also
           contributed to backend development—particularly with Go and
