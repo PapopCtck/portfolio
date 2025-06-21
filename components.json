@@ -13,7 +13,7 @@
   "aliases": {
     "components": "@ppaop/components",
     "utils": "@ppaop/lib/utils",
-    "ui": "@ppaop/components/ui",
+    "ui": "@ppaop/components/shadcn-ui",
     "lib": "@ppaop/lib",
     "hooks": "@ppaop/hooks"
   },
