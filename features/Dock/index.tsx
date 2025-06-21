@@ -1,17 +1,17 @@
 "use client";
 
 import { DockIcon, Dock as MagicDock } from "@ppaop/components/magicui/dock";
-import { buttonVariants } from "@ppaop/components/ui/button";
+import { buttonVariants } from "@ppaop/components/shadcn-ui/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@ppaop/components/ui/tooltip";
+} from "@ppaop/components/shadcn-ui/tooltip";
 import Link from "next/link";
 
 import { HomeIcon, MailIcon, PencilIcon } from "lucide-react";
-import { Separator } from "@ppaop/components/ui/separator";
+import { Separator } from "@ppaop/components/shadcn-ui/separator";
 import { cn } from "@ppaop/lib/utils";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
