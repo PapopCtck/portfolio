@@ -20,7 +20,7 @@ const zeyada = Zeyada({
 });
 
 export const metadata: Metadata = {
-  title: "PPAOP | Portfolio",
+  title: "PPAOP | Portfolio (WIP)",
   description:
     "Personal Portfolio of Papop Chattongchaikul. Software Engineer based in Bangkok, Thailand.",
 };
