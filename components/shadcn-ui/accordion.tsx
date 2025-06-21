@@ -18,7 +18,7 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("border-b first:border-t last:border-b-0", className)}
+      className={cn("border-foreground border-b first:border-t", className)}
       {...props}
     />
   );
