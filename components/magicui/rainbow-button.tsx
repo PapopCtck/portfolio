@@ -1,8 +1,7 @@
 import { cn } from "@ppaop/lib/utils";
 import React from "react";
 
-interface RainbowButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+type RainbowButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const RainbowButton = React.forwardRef<
   HTMLButtonElement,
@@ -19,7 +18,7 @@ export const RainbowButton = React.forwardRef<
         "bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]",
         // dark mode colors
         "dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]",
-        className,
+        className
       )}
       {...props}
     >
