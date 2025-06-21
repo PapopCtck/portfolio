@@ -38,7 +38,9 @@ export function NumberTicker({
       const timer = setTimeout(() => {
         motionValue.set(direction === "down" ? startValue : value);
       }, delay * 1000);
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+      };
     }
   }, [motionValue, isInView, delay, value, direction, startValue]);
 
@@ -61,7 +63,7 @@ export function NumberTicker({
       ref={ref}
       className={cn(
         "inline-block tabular-nums tracking-wider text-black dark:text-white",
-        className,
+        className
       )}
       {...props}
     >
