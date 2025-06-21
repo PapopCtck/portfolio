@@ -20,9 +20,13 @@ const zeyada = Zeyada({
 });
 
 export const metadata: Metadata = {
-  title: "PPAOP | Portfolio (WIP)",
+  title: "PPAOP | Portfolio",
   description:
     "Personal Portfolio of Papop Chattongchaikul. Software Engineer based in Bangkok, Thailand.",
+  openGraph: {
+    url: "https://ppaopctck.cc",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
