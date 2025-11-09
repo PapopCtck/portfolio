@@ -1,0 +1,19 @@
+import { Navbar as NavbarComponent } from "@ppaop/components/ui/navbar";
+
+export const Navbar = () => {
+  return (
+    <div className="fixed top-0 left-0 w-full h-15 md:h-22 z-50">
+      <NavbarComponent />
+      <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
+        <div className="pointer-events-none absolute inset-0 rounded-[inherit] hidden [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_11.11%,rgba(255,255,255,1)_22.22%,rgba(255,255,255,0)_33.33%)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_11.11%,rgba(255,255,255,1)_22.22%,rgba(255,255,255,0)_33.33%)] backdrop-blur-[0px] [-webkit-backdrop-filter:blur(0px)]" />
+        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_11.11%,rgba(255,255,255,1)_22.22%,rgba(255,255,255,1)_33.33%,rgba(255,255,255,0)_44.44%)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_11.11%,rgba(255,255,255,1)_22.22%,rgba(255,255,255,1)_33.33%,rgba(255,255,255,0)_44.44%)] backdrop-blur-[0.3px] [-webkit-backdrop-filter:blur(0.3px)]" />
+        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_22.22%,rgba(255,255,255,1)_33.33%,rgba(255,255,255,1)_44.44%,rgba(255,255,255,0)_55.56%)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_22.22%,rgba(255,255,255,1)_33.33%,rgba(255,255,255,1)_44.44%,rgba(255,255,255,0)_55.56%)] backdrop-blur-[0.6px] [-webkit-backdrop-filter:blur(0.6px)]" />
+        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_33.33%,rgba(255,255,255,1)_44.44%,rgba(255,255,255,1)_55.56%,rgba(255,255,255,0)_66.67%)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_33.33%,rgba(255,255,255,1)_44.44%,rgba(255,255,255,1)_55.56%,rgba(255,255,255,0)_66.67%)] backdrop-blur-[0.9px] [-webkit-backdrop-filter:blur(0.9px)]" />
+        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_44.44%,rgba(255,255,255,1)_55.56%,rgba(255,255,255,1)_66.67%,rgba(255,255,255,0)_77.78%)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_44.44%,rgba(255,255,255,1)_55.56%,rgba(255,255,255,1)_66.67%,rgba(255,255,255,0)_77.78%)] backdrop-blur-[1.2px] [-webkit-backdrop-filter:blur(1.2px)]" />
+        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_55.56%,rgba(255,255,255,1)_66.67%,rgba(255,255,255,1)_77.78%,rgba(255,255,255,0)_88.89%)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_55.56%,rgba(255,255,255,1)_66.67%,rgba(255,255,255,1)_77.78%,rgba(255,255,255,0)_88.89%)] backdrop-blur-[1.5px] [-webkit-backdrop-filter:blur(1.5px)]" />
+        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_66.67%,rgba(255,255,255,1)_77.78%,rgba(255,255,255,1)_88.89%,rgba(255,255,255,0)_100%)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_66.67%,rgba(255,255,255,1)_77.78%,rgba(255,255,255,1)_88.89%,rgba(255,255,255,0)_100%)] backdrop-blur-[1.8px] [-webkit-backdrop-filter:blur(1.8px)]" />
+        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_77.78%,rgba(255,255,255,1)_88.89%,rgba(255,255,255,1)_100%,rgba(255,255,255,0)_111.11%)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_77.78%,rgba(255,255,255,1)_88.89%,rgba(255,255,255,1)_100%,rgba(255,255,255,0)_111.11%)] backdrop-blur-[2.1px] [-webkit-backdrop-filter:blur(2.1px)]" />
+      </div>
+    </div>
+  );
+};

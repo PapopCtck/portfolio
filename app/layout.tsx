@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PPAOP | Portfolio",
+  title: "// PPAOP ✦ | Portfolio",
   description:
     "Personal Portfolio of Papop Chattongchaikul. Software Engineer based in Bangkok, Thailand.",
   openGraph: {

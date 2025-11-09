@@ -1,3 +1,1 @@
-export const TechStack = () => {
-  return <div>TechStack</div>;
-};
+export { TechStack } from "./TechStack";
