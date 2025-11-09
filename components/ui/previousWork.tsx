@@ -18,7 +18,7 @@ export const Header = ({
     <>
       <span
         className={cn(
-          "relative z-10 font-black text-2xl md:text-6xl lg:text-7xl",
+          "relative z-10 text-2xl font-black md:text-6xl lg:text-7xl",
           headerClassName,
         )}
       >
@@ -26,7 +26,7 @@ export const Header = ({
       </span>
       <span
         className={cn(
-          "-translate-y-1/2 absolute top-[50%] z-0 text-nowrap font-black text-9xl text-outline opacity-75 md:text-[300px] lg:text-[400px]",
+          "text-outline absolute top-[50%] z-0 -translate-y-1/2 text-9xl font-black text-nowrap opacity-75 md:text-[300px] lg:text-[400px]",
           backgroundClassName,
         )}
       >
@@ -118,7 +118,7 @@ export const FloatingBackgroundText = ({
     >
       <span
         className={cn(
-          "whitespace-nowrap text-nowrap font-black text-9xl text-outline-primary opacity-70 md:text-[196px] lg:text-[256px]",
+          "text-outline-primary text-9xl font-black text-nowrap whitespace-nowrap opacity-70 md:text-[196px] lg:text-[256px]",
           className,
         )}
       >
@@ -138,7 +138,7 @@ export const FloatingYearMarker = ({
   return (
     <span
       className={cn(
-        "font-(family-name:--font-zeyada) absolute right-[-80px] z-10 flex h-32 w-32 items-center justify-center rounded-full bg-secondary md:h-44 md:w-44 md:text-xl",
+        "bg-secondary absolute right-[-80px] z-10 flex h-32 w-32 items-center justify-center rounded-full font-(family-name:--font-zeyada) md:h-44 md:w-44 md:text-xl",
         className,
       )}
     >

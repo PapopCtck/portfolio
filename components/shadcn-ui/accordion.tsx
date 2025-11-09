@@ -96,12 +96,12 @@ function AccordionTrigger({
   const repeatedMarqueeContent = useMemo(() => {
     return (
       <>
-        <span className="text-(--background) my-auto uppercase font-normal text-4xl md:text-7xl xl:text-8xl leading-[1.2]">
+        <span className="my-auto text-4xl leading-[1.2] font-normal text-(--background) uppercase md:text-7xl xl:text-8xl">
           {hoverProps.text}
         </span>
         {hoverProps.image && (
           <div
-            className="w-[200px] h-[90%] my-[auto] mx-0 p-[1em_0] rounded-[50px] bg-cover bg-center"
+            className="mx-0 my-[auto] h-[90%] w-[200px] rounded-[50px] bg-cover bg-center p-[1em_0]"
             style={{ backgroundImage: `url(${hoverProps.image})` }}
           />
         )}
@@ -118,7 +118,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "flex flex-1 cursor-pointer items-start justify-between gap-4 rounded-md px-7 py-6 text-left font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 md:px-16 md:py-20 [&[data-state=open]>svg]:rotate-180",
+          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 cursor-pointer items-start justify-between gap-4 rounded-md px-7 py-6 text-left text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 md:px-16 md:py-20 [&[data-state=open]>svg]:rotate-180",
           triggerClassName,
         )}
         {...props}
@@ -127,17 +127,17 @@ function AccordionTrigger({
       >
         {children}
         {showChevron && (
-          <ChevronDownIcon className="pointer-events-none size-4 shrink-0 translate-y-0.5 text-muted-foreground transition-transform duration-200" />
+          <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
         )}
       </AccordionPrimitive.Trigger>
       <motion.div
-        className="absolute z-10 top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-white"
+        className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full overflow-hidden bg-white"
         initial={{ y: "101%" }}
         animate={{ y: marqueeY }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
         <motion.div
-          className="h-full w-[200%] flex"
+          className="flex h-full w-[200%]"
           initial={{ y: "-101%" }}
           animate={{ y: marqueeInnerY }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -163,7 +163,7 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
       {...props}
     >
       <div className={cn("pt-0 pb-4", className)}>{children}</div>

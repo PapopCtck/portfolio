@@ -14,7 +14,7 @@ export const Paragraph = ({
       animation="slideUp"
       by="word"
       className={cn(
-        "-translate-x-1/2 md:-translate-x-0 absolute z-20 max-w-[425px] text-justify font-semibold md:text-2xl lg:max-w-[560px]",
+        "absolute z-20 max-w-[425px] -translate-x-1/2 text-justify font-semibold md:-translate-x-0 md:text-2xl lg:max-w-[560px]",
         className,
       )}
     >
@@ -44,7 +44,7 @@ export const FloatingBackgroundText = ({
     >
       <span
         className={cn(
-          "whitespace-nowrap text-nowrap font-black text-9xl text-outline-secondary opacity-70 md:text-[300px] lg:text-[400px]",
+          "text-outline-secondary text-9xl font-black text-nowrap whitespace-nowrap opacity-70 md:text-[300px] lg:text-[400px]",
           className,
         )}
       >

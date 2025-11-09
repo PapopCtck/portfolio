@@ -7,7 +7,7 @@ import { TechStack } from "@ppaop/features/TechStack";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen min-w-screen">
+    <main className="flex min-h-screen min-w-screen flex-col">
       <Navbar />
       <Hero />
       <TechStack />

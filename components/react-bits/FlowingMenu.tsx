@@ -15,8 +15,8 @@ interface FlowingMenuProps {
 
 export const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
   return (
-    <div className="w-full h-full overflow-hidden">
-      <nav className="flex flex-col h-full m-0 p-0">
+    <div className="h-full w-full overflow-hidden">
+      <nav className="m-0 flex h-full flex-col p-0">
         {items.map((item, idx) => (
           <MenuItem key={idx} {...item} />
         ))}
@@ -71,11 +71,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
   const repeatedMarqueeContent = React.useMemo(() => {
     return (
       <>
-        <span className="text-[#060010] uppercase font-normal text-[4vh] leading-[1.2] p-[1vh_1vw_0]">
+        <span className="p-[1vh_1vw_0] text-[4vh] leading-[1.2] font-normal text-[#060010] uppercase">
           {text}
         </span>
         <div
-          className="w-[200px] h-[90%] my-[auto] mx-0 p-[1em_0] rounded-[50px] bg-cover bg-center"
+          className="mx-0 my-[auto] h-[90%] w-[200px] rounded-[50px] bg-cover bg-center p-[1em_0]"
           style={{ backgroundImage: `url(${image})` }}
         />
       </>
@@ -88,11 +88,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
 
   return (
     <div
-      className="flex-1 relative overflow-hidden text-center shadow-[0_-1px_0_0_#fff]"
+      className="relative flex-1 overflow-hidden text-center shadow-[0_-1px_0_0_#fff]"
       ref={itemRef}
     >
       <a
-        className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-white text-[4vh] hover:text-[#060010] focus:text-white focus-visible:text-[#060010]"
+        className="relative flex h-full cursor-pointer items-center justify-center text-[4vh] font-semibold text-white uppercase no-underline hover:text-[#060010] focus:text-white focus-visible:text-[#060010]"
         href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -100,13 +100,13 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image }) => {
         {text}
       </a>
       <motion.div
-        className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none bg-white"
+        className="pointer-events-none absolute top-0 left-0 h-full w-full overflow-hidden bg-white"
         initial={{ y: "101%" }}
         animate={{ y: marqueeY }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
         <motion.div
-          className="h-full w-[200%] flex"
+          className="flex h-full w-[200%]"
           initial={{ y: "-101%" }}
           animate={{ y: marqueeInnerY }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}

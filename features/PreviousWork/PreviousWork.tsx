@@ -81,7 +81,7 @@ const WorkExperienceItem = ({ experience }: { experience: WorkExperience }) => {
 export const PreviousWork = () => {
   return (
     <section className="mt-48 mb-4" id="previous-work">
-      <div className="mb-4 px-7 font-black text-2xl tracking-[32%] md:flex md:gap-3 md:px-16 md:text-5xl lg:text-[60px]">
+      <div className="mb-4 px-7 text-2xl font-black tracking-[32%] md:flex md:gap-3 md:px-16 md:text-5xl lg:text-[60px]">
         <div>
           <span>PRE</span>
           <span className="text-outline">VIOUS</span>
