@@ -1,10 +1,8 @@
 import Beams from "@ppaop/components/react-bits/Beams";
-import { HERO_BEAMS_CONFIG, HERO_LAYOUT } from "./constants";
+import { HERO_BEAMS_CONFIG } from "./constants";
 import { Spinner } from "./components";
 
 export const Hero = () => {
-  const gradientStyle = `linear-gradient(to_bottom,transparent_${HERO_LAYOUT.gradientStart},transparent_${HERO_LAYOUT.gradientMid1},var(--background)_${HERO_LAYOUT.gradientMid2},var(--background)_${HERO_LAYOUT.gradientEnd})`;
-
   return (
     <section
       id="hero"
@@ -13,10 +11,7 @@ export const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full">
         <Beams {...HERO_BEAMS_CONFIG} />
       </div>
-      <div
-        className="absolute top-0 left-0 w-full h-full pointer-events-none"
-        style={{ background: gradientStyle }}
-      />
+      <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_bottom,transparent_0%,transparent_30%,var(--background)_70%,var(--background)_100%)] pointer-events-none" />
       <Spinner />
     </section>
   );
