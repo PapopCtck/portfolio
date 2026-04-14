@@ -78,12 +78,7 @@ const ContentSummary = ({
   yearMarkerClassName?: string;
   isEnd: boolean;
 }) => (
-  <div
-    className={cn(
-      "mb-10 max-w-xl md:max-w-2xl",
-      isEnd ? "ml-auto text-right" : "text-left",
-    )}
-  >
+  <div className={cn("mb-10", isEnd ? "ml-auto text-right" : "text-left")}>
     {yearMarker && (
       <p
         className={cn(
