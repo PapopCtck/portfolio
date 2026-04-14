@@ -10,6 +10,7 @@ import {
   FloatingBackgroundText,
   Trigger,
 } from "@ppaop/components/ui/previousWork";
+import { SectionHeading } from "@ppaop/components/ui/section-heading";
 
 import { generateTextClassByIndex } from "./utils";
 import { WorkExperience, workExperiences } from "./content";
@@ -80,8 +81,8 @@ const WorkExperienceItem = ({ experience }: { experience: WorkExperience }) => {
 
 export const PreviousWork = () => {
   return (
-    <section className="mt-48 mb-4" id="previous-work">
-      <div className="mb-4 px-7 text-2xl font-black tracking-[32%] md:flex md:gap-3 md:px-16 md:text-5xl lg:text-[60px]">
+    <section className="mt-16 mb-4 md:mt-48" id="previous-work">
+      <SectionHeading className="mb-4 px-7 md:px-16">
         <div>
           <span>PRE</span>
           <span className="text-outline">VIOUS</span>
@@ -91,7 +92,7 @@ export const PreviousWork = () => {
           <span>PERIEN</span>
           <span className="text-outline">CES</span>
         </div>
-      </div>
+      </SectionHeading>
       <Accordion type="single" collapsible>
         {workExperiences.map((experience) => (
           <WorkExperienceItem key={experience.id} experience={experience} />
