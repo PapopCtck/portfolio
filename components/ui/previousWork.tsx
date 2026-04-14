@@ -26,7 +26,7 @@ export const Header = ({
       </span>
       <span
         className={cn(
-          "text-outline absolute top-[50%] z-0 -translate-y-1/2 text-9xl font-black text-nowrap opacity-75 md:text-[300px] lg:text-[400px]",
+          "text-outline absolute top-[50%] z-0 -translate-y-1/2 text-[200px] font-black text-nowrap opacity-75 md:text-[300px] lg:text-[400px]",
           backgroundClassName,
         )}
       >
