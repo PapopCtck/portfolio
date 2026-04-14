@@ -107,7 +107,7 @@ const CanvasWrapper: FC<{ children: ReactNode }> = ({ children }) => (
   </Canvas>
 );
 
-interface BeamsProps {
+export interface BeamsProps {
   beamWidth?: number;
   beamHeight?: number;
   beamNumber?: number;

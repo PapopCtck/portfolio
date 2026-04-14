@@ -1,9 +1,9 @@
-import Beams from "@ppaop/components/react-bits/Beams";
 import RotatingText from "@ppaop/components/react-bits/RotatingText";
 import TextType from "@ppaop/components/react-bits/TextType";
 import { AvailableBadge } from "@ppaop/components/ui/available-badge";
 import { HERO_BEAMS_CONFIG } from "./constants";
 import { Spinner } from "./components";
+import { BeamsClient } from "./BeamsClient";
 
 export const Hero = () => {
   return (
@@ -12,7 +12,7 @@ export const Hero = () => {
       className="relative z-1 h-screen min-h-[1200px] max-w-svw overflow-visible bg-black select-none"
     >
       <div className="absolute top-0 left-0 h-full w-full opacity-50 md:left-[-15%]">
-        <Beams {...HERO_BEAMS_CONFIG} />
+        <BeamsClient {...HERO_BEAMS_CONFIG} />
       </div>
       <div className="absolute top-[30%] w-full md:top-[20%]">
         <div className="mx-auto flex max-w-[1024px] flex-col items-center text-right md:items-end md:text-right">

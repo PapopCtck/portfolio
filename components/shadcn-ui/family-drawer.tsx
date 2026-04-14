@@ -246,7 +246,7 @@ function FamilyDrawerAnimatedWrapper({
   return (
     <div
       ref={elementRef}
-      className={clsx("px-6 pt-2.5 pb-6 antialiased", className)}
+      className={clsx("relative px-6 pt-2.5 pb-6 antialiased", className)}
     >
       {children}
     </div>
