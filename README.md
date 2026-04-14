@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PPAOP
 
-## Getting Started
+Personal portfolio site for Papop Chattongchaikul — built as a single-page Next.js app with animated hero visuals, project highlights, and contact links.
 
-First, run the development server:
+## Features
+
+- Built with **Next.js 16** and **React 19**
+- Responsive layout with dark theme and **Poppins** typography
+- **Motion**-based UI animation and interactive sections
+- Hero background using **Three.js** / **React Three Fiber** (beams effect)
+- **Previous work** section with case-study style content
+- **Contact** via drawer with social / external links (no backend form)
+
+## Tech stack
+
+- [Next.js](https://nextjs.org/) — App Router, SSR/SSG
+- [React](https://react.dev/) — UI
+- [TypeScript](https://www.typescriptlang.org/) — Types
+- [Tailwind CSS](https://tailwindcss.com/) v4 — Styling (`@tailwindcss/postcss`)
+- [Motion](https://motion.dev/) — Animation
+- [Three.js](https://threejs.org/) & [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber/introduction) & [@react-three/drei](https://github.com/pmndrs/drei) — WebGL hero
+- [Radix UI](https://www.radix-ui.com/) primitives — Accessible building blocks
+- [shadcn/ui](https://ui.shadcn.com/)-style components — `components/shadcn-ui`
+- [Vaul](https://github.com/emilkowalski/vaul) — Drawer
+- [OpenNext Cloudflare](https://opennext.js.org/cloudflare) & [Wrangler](https://developers.cloudflare.com/workers/wrangler/) — Cloudflare Workers deployment
+- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/) — Linting and formatting
+- [pnpm](https://pnpm.io/) — Package manager
+
+## Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git@github.com:PapopCtck/portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Go into the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd portfolio
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Install dependencies:
 
-## Learn More
+```bash
+pnpm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Start the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Command | Description |
+| -------- | ----------- |
+| `pnpm dev` | Next.js dev server |
+| `pnpm build` | Production build |
+| `pnpm start` | Run production server locally |
+| `pnpm lint` | ESLint |
+| `pnpm preview` | OpenNext Cloudflare build + local preview |
+| `pnpm deploy` | OpenNext Cloudflare build + deploy |
+| `pnpm cf-typegen` | Generate `cloudflare-env.d.ts` from Wrangler |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project structure
+
+```
+portfolio/
+├── app/                 # App Router — layout, page, global CSS
+├── components/          # Shared UI (shadcn-ui, magicui, react-bits, etc.)
+├── features/            # Page sections — Hero, Navbar, TechStack, PreviousWork, Footer
+├── public/              # Static assets
+├── wrangler.jsonc       # Cloudflare Workers config for OpenNext
+└── package.json
+```
+
+Path alias: `@ppaop/*` maps to the repository root (see `tsconfig.json`).
+
+## Deployment (Cloudflare)
+
+The app targets Cloudflare Workers via OpenNext. After [Wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/) is authenticated, use `pnpm deploy` or `pnpm preview` as above. Adjust `wrangler.jsonc` and compatibility settings as needed for your account.
+
+## Author
+
+PapopCtck — [@PapopCtck](https://github.com/PapopCtck)
+
+## Acknowledgments
+
+- [Next.js documentation](https://nextjs.org/docs)
+- [Tailwind CSS documentation](https://tailwindcss.com/docs)
+- [Motion documentation](https://motion.dev/docs)
+- [Three.js documentation](https://threejs.org/docs/)
+- [React Three Fiber documentation](https://docs.pmnd.rs/react-three-fiber)
+- [Cloudflare Workers documentation](https://developers.cloudflare.com/docs)
+- [OpenNext Cloudflare](https://opennext.js.org/cloudflare)
