@@ -1,4 +1,3 @@
-import { Contact } from "@ppaop/features/Contact";
 import { Footer } from "@ppaop/features/Footer";
 import { Hero } from "@ppaop/features/Hero";
 import { Navbar } from "@ppaop/features/Navbar";
@@ -12,7 +11,6 @@ export default function Home() {
       <Hero />
       <TechStack />
       <PreviousWork />
-      <Contact />
       <Footer />
     </main>
   );
