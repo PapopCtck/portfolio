@@ -20,7 +20,7 @@ export const Navbar = () => {
           <Divider />
           <NavbarItem href="#previous-work">Previous Work</NavbarItem>
           <Divider />
-          <NavbarItem href="#contact">Contact</NavbarItem>
+          <NavbarItem href="#footer">Contact</NavbarItem>
         </div>
       </GlassPanel>
     </nav>
