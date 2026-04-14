@@ -1,10 +1,7 @@
-/**
- * Default configuration for Hero section Beams component
- */
 export const HERO_BEAMS_CONFIG = {
   beamWidth: 2.5,
   beamHeight: 30,
-  beamNumber: 20,
+  beamNumber: 4,
   lightColor: "#ffffff",
   speed: 2,
   noiseIntensity: 3.85,
