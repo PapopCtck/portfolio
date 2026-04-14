@@ -1,19 +1,20 @@
 import { Navbar as NavbarComponent } from "@ppaop/components/ui/navbar";
+import GradualBlur from "@ppaop/components/react-bits/GradualBlur";
 
 export const Navbar = () => {
   return (
-    <div className="fixed top-0 left-0 z-50 h-15 w-full md:h-22">
+    <div className="fixed top-0 left-0 z-50 h-15 w-full max-w-[100vw] md:h-22">
       <NavbarComponent />
-      <div className="pointer-events-none absolute top-0 left-0 z-0 h-full w-full">
-        <div className="pointer-events-none absolute inset-0 hidden rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_11.11%,rgba(255,255,255,1)_22.22%,rgba(255,255,255,0)_33.33%)] backdrop-blur-[0px] [-webkit-backdrop-filter:blur(0px)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_11.11%,rgba(255,255,255,1)_22.22%,rgba(255,255,255,0)_33.33%)]" />
-        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_11.11%,rgba(255,255,255,1)_22.22%,rgba(255,255,255,1)_33.33%,rgba(255,255,255,0)_44.44%)] backdrop-blur-[0.3px] [-webkit-backdrop-filter:blur(0.3px)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_11.11%,rgba(255,255,255,1)_22.22%,rgba(255,255,255,1)_33.33%,rgba(255,255,255,0)_44.44%)]" />
-        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_22.22%,rgba(255,255,255,1)_33.33%,rgba(255,255,255,1)_44.44%,rgba(255,255,255,0)_55.56%)] backdrop-blur-[0.6px] [-webkit-backdrop-filter:blur(0.6px)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_22.22%,rgba(255,255,255,1)_33.33%,rgba(255,255,255,1)_44.44%,rgba(255,255,255,0)_55.56%)]" />
-        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_33.33%,rgba(255,255,255,1)_44.44%,rgba(255,255,255,1)_55.56%,rgba(255,255,255,0)_66.67%)] backdrop-blur-[0.9px] [-webkit-backdrop-filter:blur(0.9px)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_33.33%,rgba(255,255,255,1)_44.44%,rgba(255,255,255,1)_55.56%,rgba(255,255,255,0)_66.67%)]" />
-        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_44.44%,rgba(255,255,255,1)_55.56%,rgba(255,255,255,1)_66.67%,rgba(255,255,255,0)_77.78%)] backdrop-blur-[1.2px] [-webkit-backdrop-filter:blur(1.2px)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_44.44%,rgba(255,255,255,1)_55.56%,rgba(255,255,255,1)_66.67%,rgba(255,255,255,0)_77.78%)]" />
-        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_55.56%,rgba(255,255,255,1)_66.67%,rgba(255,255,255,1)_77.78%,rgba(255,255,255,0)_88.89%)] backdrop-blur-[1.5px] [-webkit-backdrop-filter:blur(1.5px)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_55.56%,rgba(255,255,255,1)_66.67%,rgba(255,255,255,1)_77.78%,rgba(255,255,255,0)_88.89%)]" />
-        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_66.67%,rgba(255,255,255,1)_77.78%,rgba(255,255,255,1)_88.89%,rgba(255,255,255,0)_100%)] backdrop-blur-[1.8px] [-webkit-backdrop-filter:blur(1.8px)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_66.67%,rgba(255,255,255,1)_77.78%,rgba(255,255,255,1)_88.89%,rgba(255,255,255,0)_100%)]" />
-        <div className="pointer-events-none absolute inset-0 rounded-[inherit] [mask-image:linear-gradient(0deg,rgba(255,255,255,0)_77.78%,rgba(255,255,255,1)_88.89%,rgba(255,255,255,1)_100%,rgba(255,255,255,0)_111.11%)] backdrop-blur-[2.1px] [-webkit-backdrop-filter:blur(2.1px)] [-webkit-mask-image:linear-gradient(0deg,rgba(255,255,255,0)_77.78%,rgba(255,255,255,1)_88.89%,rgba(255,255,255,1)_100%,rgba(255,255,255,0)_111.11%)]" />
-      </div>
+      <GradualBlur
+        target="parent"
+        position="top"
+        height="4rem"
+        strength={1}
+        divCount={10}
+        curve="bezier"
+        exponential
+        opacity={1}
+      />
     </div>
   );
 };
