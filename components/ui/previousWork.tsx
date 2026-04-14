@@ -67,31 +67,134 @@ export const Trigger = ({
   );
 };
 
+const ContentSummary = ({
+  children,
+  yearMarker,
+  yearMarkerClassName,
+  isEnd,
+}: {
+  children: string;
+  yearMarker?: React.ReactNode;
+  yearMarkerClassName?: string;
+  isEnd: boolean;
+}) => (
+  <div
+    className={cn(
+      "mb-10 max-w-xl md:max-w-2xl",
+      isEnd ? "ml-auto text-right" : "text-left",
+    )}
+  >
+    {yearMarker && (
+      <p
+        className={cn(
+          "mb-8 text-4xl font-black tracking-tight uppercase md:mb-12 md:text-7xl lg:text-8xl",
+          yearMarkerClassName,
+        )}
+      >
+        {yearMarker}
+      </p>
+    )}
+    <div className="text-sm leading-relaxed font-semibold md:text-xl lg:text-2xl">
+      <TextAnimate animation="slideUp" by="word">
+        {children}
+      </TextAnimate>
+    </div>
+  </div>
+);
+
+const ContentStory = ({
+  story,
+  isEnd,
+}: {
+  story: string[];
+  isEnd: boolean;
+}) => (
+  <div className="border-foreground/20 mb-10 border-t pt-8">
+    <div className={cn("w-full space-y-5", isEnd ? "text-right" : "text-left")}>
+      {story.map((paragraph, i) => (
+        <p key={i} className="text-sm leading-loose md:text-base lg:text-lg">
+          <TextAnimate animation="slideUp" by="word">
+            {paragraph}
+          </TextAnimate>
+        </p>
+      ))}
+    </div>
+  </div>
+);
+
+const ContentResponsibilities = ({
+  responsibilities,
+  isEnd,
+}: {
+  responsibilities: string[];
+  isEnd: boolean;
+}) => (
+  <div className="border-foreground/20 border-t pt-8">
+    <p
+      className={cn(
+        "text-md mb-6 font-bold tracking-[0.3em] uppercase",
+        isEnd ? "text-right" : "text-left",
+      )}
+    >
+      Responsibilities &amp; Impact
+    </p>
+    <ul className="grid grid-cols-1 gap-x-16 gap-y-3 md:grid-cols-2">
+      {responsibilities.map((item, i) => (
+        <li
+          key={i}
+          className={cn(
+            "flex gap-3 text-xs leading-snug font-medium md:text-sm",
+            isEnd ? "flex-row-reverse text-right" : "flex-row",
+          )}
+        >
+          <span className="mt-0.5 shrink-0">—</span>
+          <TextAnimate animation="slideUp" by="word">
+            {item}
+          </TextAnimate>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 export const ContentContainer = ({
   children,
   className,
   yearMarker,
   yearMarkerClassName,
+  story,
+  responsibilities,
+  contentAlignment = "start",
 }: {
   children: string;
   className?: string;
   yearMarker?: React.ReactNode;
   yearMarkerClassName?: string;
+  story?: string[];
+  responsibilities?: string[];
+  contentAlignment?: "start" | "end";
 }) => {
+  const isEnd = contentAlignment === "end";
+
   return (
-    <div
-      className={cn(
-        "relative z-10 max-w-[230px] text-justify font-semibold md:max-w-[425px] md:text-2xl lg:max-w-[565px]",
-        className,
-      )}
-    >
-      <TextAnimate animation="slideUp" by="word">
+    <div className={cn("relative z-10 w-full", className)}>
+      <ContentSummary
+        yearMarker={yearMarker}
+        yearMarkerClassName={yearMarkerClassName}
+        isEnd={isEnd}
+      >
         {children}
-      </TextAnimate>
-      {yearMarker && (
-        <FloatingYearMarker className={cn("", yearMarkerClassName)}>
-          {yearMarker}
-        </FloatingYearMarker>
+      </ContentSummary>
+
+      {story && story.length > 0 && (
+        <ContentStory story={story} isEnd={isEnd} />
+      )}
+
+      {responsibilities && responsibilities.length > 0 && (
+        <ContentResponsibilities
+          responsibilities={responsibilities}
+          isEnd={isEnd}
+        />
       )}
     </div>
   );
@@ -138,7 +241,7 @@ export const FloatingYearMarker = ({
   return (
     <span
       className={cn(
-        "bg-secondary absolute right-[-80px] z-10 flex h-32 w-32 items-center justify-center rounded-full font-(family-name:--font-zeyada) md:h-44 md:w-44 md:text-xl",
+        "bg-secondary z-10 flex h-28 w-28 shrink-0 items-center justify-center rounded-full text-center font-(family-name:--font-zeyada) text-sm md:h-40 md:w-40 md:text-xl",
         className,
       )}
     >

@@ -20,10 +20,6 @@ const WorkExperienceItem = ({ experience }: { experience: WorkExperience }) => {
     experience.companyName,
     experience.underlineRanges,
   );
-
-  const contentAlignmentClass =
-    experience.contentAlignment === "start" ? "md:items-start" : "md:items-end";
-
   return (
     <AccordionItem value={experience.id}>
       <Trigger
@@ -54,15 +50,16 @@ const WorkExperienceItem = ({ experience }: { experience: WorkExperience }) => {
         />
       </Trigger>
       <AccordionContent className="border-foreground border-t">
-        <div
-          className={`relative flex flex-col items-center p-16 ${contentAlignmentClass} md:px-[15%] md:py-24`}
-        >
+        <div className="relative flex flex-col p-8 md:px-[8%] md:py-20">
           {experience.contentBlocks.map((block, index) => (
             <ContentContainer
               key={index}
               className={block.className}
               yearMarker={block.yearMarker}
               yearMarkerClassName={block.yearMarkerClassName}
+              story={block.story}
+              responsibilities={block.responsibilities}
+              contentAlignment={experience.contentAlignment}
             >
               {block.text}
             </ContentContainer>
