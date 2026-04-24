@@ -30,6 +30,7 @@ interface TextTypeProps {
   onSentenceComplete?: (sentence: string, index: number) => void;
   startOnVisible?: boolean;
   reverseMode?: boolean;
+  textClassName?: string;
 }
 
 const TextType = ({
@@ -51,6 +52,7 @@ const TextType = ({
   onSentenceComplete,
   startOnVisible = false,
   reverseMode = false,
+  textClassName = "",
   ...props
 }: TextTypeProps & React.HTMLAttributes<HTMLElement>) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -181,7 +183,7 @@ const TextType = ({
     },
     <span
       ref={containerRef}
-      className="inline"
+      className={`inline ${textClassName}`}
       style={{ color: getCurrentTextColor() || "inherit" }}
     >
       {displayedText}

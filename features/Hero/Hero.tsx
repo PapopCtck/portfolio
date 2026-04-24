@@ -15,13 +15,14 @@ export const Hero = () => {
         <BeamsClient {...HERO_BEAMS_CONFIG} />
       </div>
       <div className="absolute top-[30%] w-full md:top-[20%]">
-        <div className="mx-auto flex max-w-[1024px] flex-col items-center text-right md:items-end md:text-right">
+        <div className="mx-auto flex max-w-[1024px] flex-col items-center text-right">
           <div className="mb-6">
             <AvailableBadge />
           </div>
           <TextType
             text={["// PAPOP", "// PPAOP"]}
-            className="text-glow text-7xl font-bold tracking-wide whitespace-nowrap text-white select-none md:text-9xl"
+            className="text-7xl font-bold tracking-wide whitespace-nowrap text-white select-none md:text-[150px] lg:text-[200px]"
+            textClassName="whitespace-nowrap text-glow"
             typingSpeed={120}
             showCursor
             cursorCharacter="."
@@ -30,10 +31,10 @@ export const Hero = () => {
             deletingSpeed={50}
             as="h1"
           />
-          <div className="mt-6 mr-0 flex items-center select-none md:mr-8">
+          <div className="mx-4 mt-16 flex items-center select-none">
             <RotatingText
               texts={["Software", "Full Stack", "Frontend", "Backend"]}
-              mainClassName="text-2xl mr-2 tracking-widest text-white py-1 pt-2"
+              mainClassName="text-2xl mr-2 tracking-widest text-white py-1 pt-2 font-medium text-glow"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -47,7 +48,7 @@ export const Hero = () => {
               Engineer
             </span>
           </div>
-          <div className="mt-0 mr-0 md:mr-8">
+          <div className="mx-4 mt-0">
             <RotatingText
               texts={[
                 '"Stay hungry, stay foolish." - Steve Jobs',
