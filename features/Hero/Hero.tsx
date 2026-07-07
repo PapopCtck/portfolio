@@ -21,7 +21,7 @@ export const Hero = () => {
           </div>
           <TextType
             text={["// PAPOP", "// PPAOP"]}
-            className="text-7xl font-bold tracking-wide whitespace-nowrap text-white select-none md:text-[150px] lg:text-[200px]"
+            className="text-7xl font-bold tracking-wide whitespace-nowrap text-white select-none md:text-[120px] lg:text-[150px]"
             textClassName="whitespace-nowrap text-glow"
             typingSpeed={120}
             showCursor
@@ -34,7 +34,7 @@ export const Hero = () => {
           <div className="mx-4 mt-16 flex items-center select-none">
             <RotatingText
               texts={["Software", "Full Stack", "Frontend", "Backend"]}
-              mainClassName="text-2xl mr-2 tracking-widest text-white py-1 pt-2 font-medium text-glow"
+              mainClassName="text-2xl mr-2 tracking-widest text-white py-1 pt-2 font-bold text-glow"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
